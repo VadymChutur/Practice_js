@@ -72,8 +72,30 @@ const cart = {
     return total;
   },
 
-  increaseQuantity(productName) {},
-  decreaseQuantity(productName) {},
+  increaseQuantity(productName) {
+    const { items } = this;
+
+    for (const item of items) {
+      if (item.name === productName) {
+        item.quantity += 1;
+      }
+    }
+  },
+  decreaseQuantity(productName) {
+    const { items } = this;
+
+    for (const item of items) {
+      // console.log(item.name === productName);
+      // console.log(item.quantity);
+      // console.log('quantity: ', item.quantity === 0);
+      if (item.name === productName && item.quantity === 1) {
+        // console.log('Тут треба ремув');
+        this.remove(productName);
+      } else if (item.name === productName) {
+        item.quantity -= 1;
+      }
+    }
+  },
 };
 
 console.table(cart.getItems());
@@ -99,5 +121,24 @@ console.table(cart.getItems());
 // cart.clear();
 
 console.log(cart.countTotalPrice());
+
+cart.increaseQuantity('strawberry');
+cart.increaseQuantity('strawberry');
+cart.increaseQuantity('strawberry');
+cart.increaseQuantity('strawberry');
+
+cart.decreaseQuantity('strawberry');
+cart.decreaseQuantity('strawberry');
+cart.decreaseQuantity('strawberry');
+cart.decreaseQuantity('strawberry');
+cart.decreaseQuantity('strawberry');
+cart.decreaseQuantity('strawberry');
+cart.decreaseQuantity('strawberry');
+// cart.decreaseQuantity('strawberry');
+
+cart.add({ name: 'strawberry', price: 110 });
+
+cart.increaseQuantity('strawberry');
+cart.increaseQuantity('strawberry');
 
 console.table(cart.getItems());
