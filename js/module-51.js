@@ -41,3 +41,23 @@ const players = [
 
 console.log(_.sumBy(players, (player) => player.timePlayed));
 console.log(_.minBy(players, (player) => player.timePlayed));
+
+const isIsogram = (str) => {
+  const res = str.split('');
+
+  const resFilter = res.filter((el, index, array) => {
+    console.log('el: ', el);
+    console.log('index: ', index);
+    console.log('array: ', array);
+
+    console.log(array.indexOf(el) === index);
+    return array.indexOf(el) === index;
+  }).length;
+
+  console.log(str.length);
+  return resFilter === str.length;
+};
+
+// console.log(isIsogram('thomas'));
+// console.log(isIsogram('moses'));
+console.log(isIsogram(''));
