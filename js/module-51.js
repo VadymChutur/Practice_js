@@ -42,22 +42,46 @@ const players = [
 console.log(_.sumBy(players, (player) => player.timePlayed));
 console.log(_.minBy(players, (player) => player.timePlayed));
 
-const isIsogram = (str) => {
-  const res = str.split('');
+// const isIsogram = (str) => {
+//   const res = str.split('');
 
-  const resFilter = res.filter((el, index, array) => {
-    console.log('el: ', el);
-    console.log('index: ', index);
-    console.log('array: ', array);
+//   const resFilter = res.filter((el, index, array) => {
+//     console.log('el: ', el);
+//     console.log('index: ', index);
+//     console.log('array: ', array);
 
-    console.log(array.indexOf(el) === index);
-    return array.indexOf(el) === index;
-  }).length;
+//     console.log(array.indexOf(el) === index);
+//     return array.indexOf(el) === index;
+//   }).length;
 
-  console.log(str.length);
-  return resFilter === str.length;
-};
+//   console.log(str.length);
+//   return resFilter === str.length;
+// };
 
-// console.log(isIsogram('thomas'));
-// console.log(isIsogram('moses'));
+const isIsogram = (str) =>
+  str
+    .toLowerCase()
+    .split('')
+    .every((letter, i, arr) => arr.indexOf(letter) === i);
+
+console.log(isIsogram('thomas'));
+console.log(isIsogram('moses'));
 console.log(isIsogram(''));
+
+var XO = (s) =>
+  ![...s].reduce(
+    (t, v) => t + ((v = (v.charCodeAt() - 24) % 32) ? (v - 23 ? 0 : -1) : 1),
+    0
+  );
+
+function XO(str) {
+  return (
+    str
+      .split('')
+      .reduce(
+        (acc, cur) =>
+          /o/i.test(cur) ? acc + 1 : /x/i.test(cur) ? acc - 1 : acc,
+        0
+      ) === 0
+  );
+}
