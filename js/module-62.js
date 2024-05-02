@@ -3,14 +3,14 @@ titleEl.classList.add('page-title');
 titleEl.textContent = 'Це заголовок сторінки.';
 console.log(titleEl);
 
-document.body.appendChild(titleEl);
 const imageEl = document.createElement('img');
 imageEl.src =
   'https://media.istockphoto.com/id/872089570/photo/smiling-bullterrier-puppy-dog-portrait-on-a-green-grass-on-a-sunny-day.jpg?b=1&s=612x612&w=0&k=20&c=HdtVPaT0M9XB7UP2Cl0b5M_y3ZaXckR6JRTForxurAk=';
 imageEl.alt = 'Good boy :)';
 imageEl.width = 320;
 console.log(imageEl);
-document.body.appendChild(imageEl);
+const heroEl = document.querySelector('.hero');
+heroEl.append(titleEl, imageEl);
 
 const navItemEl = document.createElement('li');
 navItemEl.classList.add('site-nav__item');
