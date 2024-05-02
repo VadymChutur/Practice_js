@@ -16,18 +16,19 @@ const colorPickerRef = document.querySelector('.js-color-picker');
 // buttonEl.textContent = options.label;
 // buttonEl.style.backgroundColor = options.color;
 
-const colorPicker = colorPickerOptions.map((el, index, arr) => {
-  console.log(el);
-  const buttonEl = document.createElement('button');
-  buttonEl.type = 'button';
-  buttonEl.textContent = el.label;
-  buttonEl.style.backgroundColor = el.color;
-  buttonEl.style.width = '100px';
-  buttonEl.style.height = '100px';
+const makeColorPicker = (options) => {
+  return options.map((el) => {
+    const buttonEl = document.createElement('button');
+    buttonEl.type = 'button';
+    buttonEl.textContent = el.label;
+    buttonEl.style.backgroundColor = el.color;
+    buttonEl.style.width = '100px';
+    buttonEl.style.height = '100px';
 
-  return buttonEl;
-});
+    return buttonEl;
+  });
+};
 
-console.log(colorPicker);
+const markUp = makeColorPicker(colorPickerOptions);
 
-colorPickerRef.append(...colorPicker);
+colorPickerRef.append(...markUp);
