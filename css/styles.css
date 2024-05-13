@@ -4,6 +4,15 @@ body {
   color: #2a2a2a;
 }
 
+table,
+th,
+td {
+  border: 1px solid;
+  width: auto;
+  border-collapse: collapse;
+  font-weight: 1500;
+}
+
 .magic-btn {
   display: inline-flex;
   justify-content: center;
