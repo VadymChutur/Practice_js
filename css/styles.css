@@ -55,3 +55,23 @@ td {
   outline: none;
   cursor: pointer;
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+button,
+label {
+  cursor: pointer;
+}
+
+input {
+  font: inherit;
+}
+
+.section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
