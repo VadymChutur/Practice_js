@@ -5,10 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/modal.css" />
   </head>
   <body>
     <p><a href="/index.html">Головна</a></p>
     <p><a href="./events.html">Події</a></p>
+
+    <button type="button" data-action="open-modal">
+      Відкрити модальне вікно
+    </button>
+
+    <div class="backdrop js-backdrop">
+      <div class="modal">
+        <h2>Modal window</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+          reprehenderit accusamus laboriosam hic culpa quo repellat numquam unde
+          possimus facere! Sit fuga doloribus assumenda cum perferendis saepe,
+          ullam laborum ea impedit quisquam quas placeat accusamus nulla
+          voluptatibus sequi tempora qui iusto facere maiores, nisi mollitia!
+          Officia dignissimos in nihil! Ducimus nobis inventore modi ab delectus
+          est quidem voluptatibus quis molestiae pariatur totam maiores
+          laudantium aut id, illo repellat consequatur doloremque accusamus ad.
+          Mollitia, esse! Ipsam officia vitae ipsum molestias? Impedit quod eos
+          doloremque nam est quos non doloribus sunt? Ea unde ut placeat sit,
+          molestias minima perspiciatis fugit aliquam saepe?
+        </p>
+        <button type="button" class="button" data-action="close-modal">
+          Закрити
+        </button>
+      </div>
+    </div>
 
     <script type="module" src="/js/module-72.js"></script>
   </body>
